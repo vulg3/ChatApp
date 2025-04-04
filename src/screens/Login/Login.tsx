@@ -2,9 +2,9 @@ import React, { useCallback } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
-import { TabNavigationProp } from '../navigation/bottom/RootTab';
-import { RootStackParamEnum } from '../navigation/stack/RootStack';
-import { onFacebookButtonPress, onGoogleButtonPress } from '../core/services/authService';
+import { TabNavigationProp } from '../../navigation/bottom/RootTab';
+import { onFacebookButtonPress, onGoogleButtonPress } from '../../core/services/authService';
+import { RootStackParamEnum } from '../../navigation/stack/RootStack';
 
 
 export default function Login() {

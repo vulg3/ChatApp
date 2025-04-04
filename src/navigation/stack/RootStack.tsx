@@ -6,10 +6,10 @@ import {
 import { useTheme } from "@rneui/themed"
 import React from "react"
 import RootTab from "../bottom/RootTab"
-import Login from "../../screen/Login"
-import Chat from "../../screen/Chat"
+import Login from "../../screens/Login"
+import Chat from "../../screens/Chat"
 import { Message } from "../../core/entities/message"
-import HomeScreen from "../../screen/Home"
+import HomeScreen from "../../screens/Home"
 
 export type ChatProps = NativeStackNavigationProp<RootStackParamList, RootStackParamEnum.Chat>
 
