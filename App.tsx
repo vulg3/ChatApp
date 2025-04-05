@@ -2,17 +2,29 @@ import React, { } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { RootStack } from './src/navigation/stack/RootStack';
 import { ThemeProvider } from "@rneui/themed";
-import { theme } from './src/core/theme/theme';
+import { ErrorBoundary } from './src/core/component/ErrorBoundary';
 
-function App() {
-
+function App(): React.JSX.Element {
   return (
-    <ThemeProvider theme={theme}>
+    <ErrorBoundary>
+      {/* <Provider store={store}>
+        <PersistGate
+      </Provider> */}
+    </ErrorBoundary>
+  )
+}
+
+const RootNavigation= () =>{
+
+  return(
+    <ThemeProvider> 
       <NavigationContainer>
-        <RootStack />
+        <RootStack/>
+        {/* <AppLoading isLoading={}/> */}
       </NavigationContainer>
+
     </ThemeProvider>
-  );
+  )
 }
 
 export default App
