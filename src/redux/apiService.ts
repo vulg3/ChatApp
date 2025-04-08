@@ -1,14 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { envApp } from '../config/envConfigs'
 
-export const pokemonApi = createApi({
-  reducerPath: 'pokemonApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2/' }),
-  endpoints: (build) => ({
-    getPokemonByName: build.query<Pokemon, string>({
-      query: (name) => `pokemon/${name}`,
-    }),
-  }),
+const baseQuery = fetchBaseQuery({
+  baseUrl: envApp.BASEURL,
+  credentials:"include",
+  timeout:10000,
 })
 
-
-export const { useGetPokemonByNameQuery } = pokemonApi
+export const apiService = createApi({
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2/' }),
+  endpoints: () => ({})
+})
