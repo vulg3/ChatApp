@@ -4,8 +4,8 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack"
 import React from "react"
 import { RootStackParamList } from "../stack/RootStack"
 import { BottomTab } from "../../core/component/BottomTab"
-import Home from "../../screens/Home"
-import Chat from "../../screens/Chat"
+import Home from "../../screens/Home/Home"
+import Chat from "../../screens/Chat/Chat"
 
 const Tab = createBottomTabNavigator<RootTabParamsList>()
 

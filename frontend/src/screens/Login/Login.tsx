@@ -1,36 +1,10 @@
-import React, { useCallback } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { useNavigation } from '@react-navigation/native';
-import { TabNavigationProp } from '../../navigation/bottom/RootTab';
-import { onFacebookButtonPress, onGoogleButtonPress } from '../../core/services/authService';
-import { RootStackParamEnum } from '../../navigation/stack/RootStack';
-
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import { useLoginHandlers } from "./hooks/useLoginHandlers";
 
 export default function Login() {
-
-  const navigation = useNavigation<TabNavigationProp>()
-
-  const handleLoginGoogle = useCallback(async () => {
-    const result = await onGoogleButtonPress();
-    if (true) {
-      navigation.reset({
-        index: 0,
-        routes: [{ name: RootStackParamEnum.Tab }],
-      })
-    }
-  }, []);
-
-  const handleLoginFacebook = useCallback(async () => {
-    const result = await onFacebookButtonPress();
-    if (result) {
-      navigation.reset({
-        index: 0,
-        routes: [{ name: RootStackParamEnum.Tab }],
-      })
-    }
-  }, [navigation]);
-
+  const { handleLoginGoogle, handleLoginFacebook } = useLoginHandlers();
 
   return (
     <View style={styles.container}>
@@ -54,50 +28,50 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
   },
   loginBox: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     padding: 20,
     borderRadius: 15,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowRadius: 10,
     elevation: 5,
     width: 300,
-    alignItems: 'center',
+    alignItems: "center",
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 20,
   },
   googleButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
     padding: 10,
-    backgroundColor: '#DB4437',
+    backgroundColor: "#DB4437",
     borderRadius: 10,
     marginBottom: 10,
   },
   facebookButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
     padding: 10,
-    backgroundColor: '#4267B2',
+    backgroundColor: "#4267B2",
     borderRadius: 10,
   },
   icon: {
     marginRight: 10,
   },
   buttonText: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
   },
 });

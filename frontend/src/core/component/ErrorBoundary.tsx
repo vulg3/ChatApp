@@ -3,6 +3,7 @@ import LottieView from "lottie-react-native"
 import React, { type ComponentType, type ReactNode } from "react"
 import { View } from "react-native"
 import Wrapper from "./Wrapper"
+import Error from "../../assets/animations/error.json"
 
 export type Props = { error: Error | null; resetError: () => void }
 
@@ -10,7 +11,7 @@ const FallbackComponent: React.FC<Props> = (props) => {
     return (
         <Wrapper isSafeArea containerStyle={{ justifyContent: "center", alignItems: "center" }}>
             <LottieView
-                source={require("@/assets/animations/error.json")}
+                source={Error}
                 autoPlay
                 loop
                 style={{ width: normalize(248), aspectRatio: 1 }}
