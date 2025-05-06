@@ -37,10 +37,7 @@ export class AuthService {
     const uid = decodedToken.uid || decodedToken.id;
     const name = decodedToken.name || 'Unnamed';
     const email = decodedToken.email;
-    const avatar =
-      decodedToken.picture ||
-      decodedToken.picture?.data?.url ||
-      null;
+    const avatar = decodedToken.picture?.data?.url ?? decodedToken.picture ?? null;
 
     let user = await this.usersService.findByUid(uid).catch(() => null);
 

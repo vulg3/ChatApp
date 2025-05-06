@@ -16,9 +16,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forRoot(process.env.MONGODB_URI!, {
-      dbName: process.env.DB_NAME,
-    }),
+    MongooseModule.forRoot(process.env.MONGODB_URI!),
     AuthModule, ChatsModule, RoomsModule, MessagesModule, UsersModule],
   controllers: [AppController],
   providers: [AppService, ChatService, ChatGateway],
