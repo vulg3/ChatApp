@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MyApp</string>
-    <string name="default_web_client_id">305215596246-oo4jantcufd1r6fni93u5ksnar8k3sle.apps.googleusercontent.com</string>
+    <string name="default_web_client_id">
+        305215596246-oo4jantcufd1r6fni93u5ksnar8k3sle.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">1347310206289340</string>
+    <string name="fb_login_protocol_scheme">fb596d58ec598b44d93eccc20703042e67</string>
+    <string name="facebook_client_token">596d58ec598b44d93eccc20703042e67</string>
 </resources>

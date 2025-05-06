@@ -2,11 +2,13 @@ import { apiService } from "../../apiService"
 
 interface LoginRequest {
     idToken: string
+    provider: "google" | "facebook"
 }
 
 interface LoginResponse {
-    accsess_token: string
-    refresh_token: string
+    access_token: string;
+    refresh_token: string;
+    user: any;
 }
 
 export class AuthEndPoint {

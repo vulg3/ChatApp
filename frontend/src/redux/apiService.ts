@@ -31,10 +31,10 @@ const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQue
           const refreshResult = (await baseQuery(
             {
               url: "/auth/refresh",
-              method: "GET",
+              method: "POST",
               headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${(api.getState() as RootState).root.auth.access_token}`
+                Authorization: `Bearer ${(api.getState() as RootState).root.auth.refresh_token}`
               },
             },
             api,

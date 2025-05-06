@@ -3,7 +3,6 @@ import { GoogleSignin } from "@react-native-google-signin/google-signin"
 import { auth } from "../../config/firebaseConfig";
 import { LoginManager, AccessToken } from 'react-native-fbsdk-next';
 
-
 export async function onGoogleButtonPress() {
   try {
     await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
@@ -83,7 +82,3 @@ export async function logOut() {
     return false;
   }
 }
-
-
-
-
